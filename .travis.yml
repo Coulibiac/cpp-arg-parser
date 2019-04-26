@@ -4,7 +4,6 @@ compiler:
     - gcc
 
 script:
-    - cd Coulibiac/cpp-arg-parser && ls
-    - mkdir build
+    - mkdir build && cd build
     - cmake ..
     - make
