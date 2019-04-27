@@ -8,4 +8,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(argumentparser)
 
-add_subdirectory(testapp)
+#add_subdirectory(testapp)

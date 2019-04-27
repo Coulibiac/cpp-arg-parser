@@ -1,4 +1,6 @@
-# CMake for src folder
+# CMake for test application 
+
+cmake_minimum_required(VERSION 3.9)
 
 find_library(ARGPARSER_LIBRARY argparser HINTS /usr/local/lib)
 
