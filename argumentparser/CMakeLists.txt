@@ -16,3 +16,5 @@ target_include_directories(argparser PRIVATE include/
                                     SYSTEM INTERFACE include/)
 
 target_compile_options(argparser PRIVATE -Werror -Wall -Wextra)
+
+add_subdirectory(test)
