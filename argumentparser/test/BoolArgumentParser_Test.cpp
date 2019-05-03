@@ -29,12 +29,12 @@ protected:
 
 TEST_F(BoolArgumentParserTests, ParseBoolReturnsFalseGivenFalse)
 {
-    ASSERT_FALSE(testParser.parseBoolValue("false"));
+    ASSERT_FALSE(testParser.parseBoolValue("flag=false"));
 }
 
 TEST_F(BoolArgumentParserTests, ParseBoolReturnsTrueGivenTrue)
 {
-    ASSERT_TRUE(testParser.parseBoolValue("true"));
+    ASSERT_TRUE(testParser.parseBoolValue("flag=true"));
 }
 
 TEST_F(BoolArgumentParserTests, ParseBoolThrowsExceptionWhenGivenInvalidInput)

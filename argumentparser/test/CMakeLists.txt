@@ -13,7 +13,9 @@ link_directories("${CMAKE_BINARY_DIR}/lib")
 add_executable(testArgParser 
                 gtestMain.cpp
                 BoolArgumentParser_Test.cpp
+                StringArgumentParser_Test.cpp
                 ${PROJECT_SOURCE_DIR}/argumentparser/src/BoolArgumentParser.cpp
+                ${PROJECT_SOURCE_DIR}/argumentparser/src/StringArgumentParser.cpp
                 )
 
 target_link_libraries(testArgParser 
