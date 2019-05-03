@@ -17,4 +17,15 @@ target_include_directories(argparser PRIVATE include/
 
 target_compile_options(argparser PRIVATE -Werror -Wall -Wextra)
 
+configure_file(${PROJECT_SOURCE_DIR}/argumentparser/cmake/cmake_helpers.cmake.in googletest-download/CMakeLists.txt)
+message("${CMAKE_BINARY_DIR}")
+execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
+                WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/argumentparser/googletest-download")
+
+execute_process(COMMAND "${CMAKE_COMMAND}" --build .
+                WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/argumentparser/googletest-download")
+
+add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
+                 ${CMAKE_BINARY_DIR}/googletest-build)
+
 add_subdirectory(test)
