@@ -18,7 +18,7 @@ public:
 
     ~BoolArgumentParser() = default;
 
-    bool parseBoolValue(std::string flagNameAndValue);
+    bool parseBoolValue(const std::string& flagNameAndValue) const;
 
 };
 

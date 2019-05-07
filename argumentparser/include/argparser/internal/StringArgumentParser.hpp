@@ -18,7 +18,7 @@ public:
 
     ~StringArgumentParser() = default;
 
-    std::string parseStringValue(std::string flagNameAndValue);
+    std::string parseStringValue(const std::string& flagNameAndValue) const;
 
 };
 

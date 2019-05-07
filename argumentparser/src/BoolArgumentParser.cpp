@@ -9,7 +9,7 @@ namespace ArgumentParser
 namespace InternalAP
 {
 
-bool BoolArgumentParser::parseBoolValue(std::string flagNameAndValue)
+bool BoolArgumentParser::parseBoolValue(const std::string& flagNameAndValue) const
 {
     std::size_t valueLocation = flagNameAndValue.find("=") + 1;
     std::string boolValueAsString = flagNameAndValue.substr(valueLocation);

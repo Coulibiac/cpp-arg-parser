@@ -18,7 +18,7 @@ public:
 
     ~IntArgumentParser() = default;
 
-    int parseIntValue(std::string flagNameAndValue);
+    int parseIntValue(const std::string& flagNameAndValue) const;
 };
 
 }

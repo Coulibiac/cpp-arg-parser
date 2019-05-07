@@ -14,8 +14,10 @@ add_executable(testArgParser
                 gtestMain.cpp
                 BoolArgumentParser_Test.cpp
                 StringArgumentParser_Test.cpp
+                IntArgumentParser_Test.cpp
                 ${PROJECT_SOURCE_DIR}/argumentparser/src/BoolArgumentParser.cpp
                 ${PROJECT_SOURCE_DIR}/argumentparser/src/StringArgumentParser.cpp
+                ${PROJECT_SOURCE_DIR}/argumentparser/src/IntArgumentParser.cpp
                 )
 
 target_link_libraries(testArgParser 

@@ -29,9 +29,9 @@ public:
     /*
      * Getter functions for arguments parsed
      */
-    bool getBoolArg(std::string flagName);
-    std::string getStringArg(std::string flagName);
-    int getIntArg(std::string flagName);
+    bool getBoolArg(const std::string& flagName);
+    std::string getStringArg(const std::string& flagName);
+    int getIntArg(const std::string& flagName);
 
 private:
 
@@ -43,12 +43,12 @@ private:
     std::unique_ptr<InternalAP::IntArgumentParser> intParser;
     std::unique_ptr<InternalAP::StringArgumentParser> stringParser;
 
-    void runArgumentParsing(std::string flagType, std::string flagAndValue);
-    bool parseBoolArg(std::string flagNameAndValue);
-    std::string parseStringArg(std::string flagNameAndValue);
-    int parseIntArg(std::string flagNameAndValue);
+    void runArgumentParsing(const std::string& flagType, const std::string& flagAndValue);
+    bool parseBoolArg(const std::string& flagNameAndValue) const;
+    std::string parseStringArg(const std::string& flagNameAndValue) const;
+    int parseIntArg(const std::string& flagNameAndValue) const;
     
-    std::string parseFlagName(std::string flagAndValue);
+    std::string parseFlagName(const std::string& flagAndValue) const;
 
 };
 

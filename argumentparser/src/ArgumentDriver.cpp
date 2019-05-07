@@ -14,7 +14,7 @@ ArgumentDriver::ArgumentDriver()
     
 }
 
-bool ArgumentDriver::getBoolArg(std::string flagName)
+bool ArgumentDriver::getBoolArg(const std::string& flagName)
 {
     if (boolArgMap.find(flagName) != boolArgMap.end())
     {
@@ -23,11 +23,10 @@ bool ArgumentDriver::getBoolArg(std::string flagName)
     else
     {
         throw ArgumentMissingException("No bool arg for flag name: " + flagName);
-        // Throw Exception
     }
 }
 
-std::string ArgumentDriver::getStringArg(std::string flagName)
+std::string ArgumentDriver::getStringArg(const std::string& flagName)
 {
     if (stringArgMap.find(flagName) != stringArgMap.end())
     {
@@ -36,11 +35,10 @@ std::string ArgumentDriver::getStringArg(std::string flagName)
     else
     {
         throw ArgumentMissingException("No string arg for flag name: " + flagName);
-        // Throw Exception
     }
 }
 
-int ArgumentDriver::getIntArg(std::string flagName)
+int ArgumentDriver::getIntArg(const std::string& flagName)
 {
     if (intArgMap.find(flagName) != intArgMap.end())
     {
@@ -49,7 +47,6 @@ int ArgumentDriver::getIntArg(std::string flagName)
     else
     {
         throw ArgumentMissingException("No int arg for flag name: " + flagName);
-        // Throw Exception
     }
 }
 
@@ -61,25 +58,25 @@ void ArgumentDriver::parseArguments(int argc, char* argv[])
     }
 }
 
-bool ArgumentDriver::parseBoolArg(std::string flagNameAndValue)
+bool ArgumentDriver::parseBoolArg(const std::string& flagNameAndValue) const
 {
     std::cout << "Flag name is: " << flagNameAndValue << std::endl;
     return boolParser->parseBoolValue(flagNameAndValue);
 }
 
-std::string ArgumentDriver::parseStringArg(std::string flagNameAndValue)
+std::string ArgumentDriver::parseStringArg(const std::string& flagNameAndValue) const
 {
     std::cout << "Flag name is: " << flagNameAndValue << std::endl;
     return stringParser->parseStringValue(flagNameAndValue);
 }
 
-int ArgumentDriver::parseIntArg(std::string flagNameAndValue)
+int ArgumentDriver::parseIntArg(const std::string& flagNameAndValue) const
 {
     std::cout << "Flag name is: " << flagNameAndValue << std::endl;
     return intParser->parseIntValue(flagNameAndValue);
 }
 
-void ArgumentDriver::runArgumentParsing(std::string flagType, std::string flagAndValue)
+void ArgumentDriver::runArgumentParsing(const std::string& flagType, const std::string& flagAndValue)
 {
     std::string flagName = parseFlagName(flagAndValue);
     if (flagType == "-b")
@@ -103,7 +100,7 @@ void ArgumentDriver::runArgumentParsing(std::string flagType, std::string flagAn
     }
 }
 
-std::string ArgumentDriver::parseFlagName(std::string flagAndValue)
+std::string ArgumentDriver::parseFlagName(const std::string& flagAndValue) const
 {
     std::size_t equalsPos = flagAndValue.find("=");
     return flagAndValue.substr(0, equalsPos);
